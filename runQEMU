@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+
+TEST=$1
+
+if [ -z "$TEST" ]; then
+  echo "Uso: $0 <nombre_del_test>"
+  exit 1
+fi
+
+pushd ${TEST} > /dev/null
+make
+popd > /dev/null
+
+../TFG-QemuNoelSrg/build/qemu-system-riscv32 \
+  -M noel-srg -nographic \
+  -device loader,file=${TEST}/kernel.elf
