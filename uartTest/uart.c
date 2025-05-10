@@ -56,6 +56,11 @@ void uart_rx_irq_enable()
 {
 	pUART_REGS->Ctrl |= LEON_UART_RI;
 }
+
+void uart_loopback_enable()
+{
+	pUART_REGS->Ctrl |= LEON_UART_LB;
+}
  
 void outchar(char c) {
 	uint32_t write_timeout=0;

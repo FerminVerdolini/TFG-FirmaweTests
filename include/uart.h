@@ -19,6 +19,7 @@ void uart_tx_enable();
 void uart_rx_enable();
 void outchar(char c);
 void uart_rx_irq_enable();
+void uart_loopback_enable();
 
 //void _putc ( void* p, char c);
 

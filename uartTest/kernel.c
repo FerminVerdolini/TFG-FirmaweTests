@@ -6,20 +6,26 @@
 
 
 void kmain(void) {
-int32_t car;
+    uart_tx_enable();
+    uart_rx_enable();
+    
+    uart_loopback_enable();
+    char test_char = 'X';
+    outchar(test_char);
 
-     uart_tx_enable();
-     uart_rx_enable();
-     
-     print("Init kmain!\n");
-     
+    int32_t recv_char = -1;
+    int timeout = 100000;
 
-     do {       
-        do { car = getcar(); } while( car == -1 );
-        
-        outchar( (char)car );
-     } while( car != 'q' );
+    while (timeout-- && recv_char == -1) {
+        recv_char = getcar();
+    }
 
-
-     print("\nEnd kmain...\n");          
+    if (recv_char == test_char) {
+        print("UART loopback test PASSED\n");
+    } else {
+        print("UART loopback test FAILED\n");
+        print("Received: ");
+        outchar((char)recv_char);
+        print("\n");
+    }    
 }
