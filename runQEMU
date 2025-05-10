@@ -12,6 +12,6 @@ pushd ${TEST} > /dev/null
 make
 popd > /dev/null
 
-../TFG-QemuNoelSrg/build/qemu-system-riscv32 \
+../build/qemu-system-riscv32 \
   -M noel-srg -nographic \
   -device loader,file=${TEST}/kernel.elf
