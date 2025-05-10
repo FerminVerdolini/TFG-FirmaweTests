@@ -13,5 +13,7 @@ make
 popd > /dev/null
 
 ../build/qemu-system-riscv32 \
-  -M noel-srg -nographic \
+  -M noel-srg \
+  -nographic \
+  -no-reboot \
   -device loader,file=${TEST}/kernel.elf
