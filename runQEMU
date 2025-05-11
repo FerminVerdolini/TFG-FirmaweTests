@@ -12,6 +12,7 @@ pushd ${TEST} > /dev/null
 make
 popd > /dev/null
 
+# ../TFG-QemuNoelSrg/build/qemu-system-riscv32 \
 ../build/qemu-system-riscv32 \
   -M noel-srg \
   -nographic \
