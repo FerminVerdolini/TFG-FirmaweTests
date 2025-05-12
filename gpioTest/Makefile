@@ -1,5 +1,5 @@
 # gpioTest/Makefile
-CFILES = kernel.c gpio.c
+CFILES = kernel.c gpio.c ../common/uart.c
 OFILES = $(CFILES:.c=.o)
 
 INCLUDES = -I../include

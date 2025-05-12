@@ -1,5 +1,5 @@
 # uartTest/Makefile
-CFILES = kernel.c uart.c
+CFILES = kernel.c ../common/uart.c 
 OFILES = $(CFILES:.c=.o)
 
 INCLUDES = -I../include
