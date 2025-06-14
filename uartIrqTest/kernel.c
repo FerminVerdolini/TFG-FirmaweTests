@@ -10,7 +10,7 @@ void uart_rx_handler(void)
 	char car = getcar();
     if (car == test_char) {
         uart_rx_irq_disable(); 
-        print("\nUART loopback test PASSED\n");
+        print("\nUART irq loopback test PASSED\n");
     } else {
         print("UART loopback test FAILED\n");
         print("Received: ");
