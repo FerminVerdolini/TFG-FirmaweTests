@@ -1,6 +1,6 @@
 # TFG-FirmwareTests/Makefile
 
-TESTS = uartTest gpioTest
+TESTS = uartTest gpioTest timerTest
 .PHONY: all clean $(TESTS)
 
 all: $(TESTS)
