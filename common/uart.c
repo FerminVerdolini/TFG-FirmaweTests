@@ -57,6 +57,11 @@ void uart_rx_irq_enable()
 	pUART_REGS->Ctrl |= LEON_UART_RI;
 }
 
+void uart_rx_irq_disable()
+{
+	pUART_REGS->Ctrl &= ~LEON_UART_RI;
+}
+
 void uart_loopback_enable()
 {
 	pUART_REGS->Ctrl |= LEON_UART_LB;
